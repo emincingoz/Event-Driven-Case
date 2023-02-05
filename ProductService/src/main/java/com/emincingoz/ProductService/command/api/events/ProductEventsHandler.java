@@ -27,6 +27,7 @@ public class ProductEventsHandler {
         productRepository.save(product);
     }
 
+    // When an error occurs in the event handle, this method is triggered and the database process becomes a rollback
     @ExceptionHandler
     public void handle(Exception e) throws Exception {
         throw e;
