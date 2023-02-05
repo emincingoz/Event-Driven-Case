@@ -3,6 +3,7 @@ package com.emincingoz.ProductService.command.api.aggregate;
 import com.emincingoz.ProductService.command.api.commands.CreateProductCommand;
 import com.emincingoz.ProductService.command.api.events.ProductCreatedEvent;
 import com.fasterxml.jackson.databind.util.BeanUtil;
+import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
@@ -23,6 +24,7 @@ public class ProductAggregate {
     public ProductAggregate() {
     }
 
+    @CommandHandler
     public ProductAggregate(CreateProductCommand createProductCommand) {
         // You can perform all the validations.
 
